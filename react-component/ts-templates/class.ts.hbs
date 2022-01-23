@@ -1,0 +1,35 @@
+/**
+*
+* {{ properCase name }}
+*/
+
+// Node_Module imports
+import React, { PureComponent} from 'react';
+import styled from 'styled-components';
+
+// Relative imports
+import styles, { CompRoot } from './{{ properCase name}}.style';
+
+export interface {{ properCase name }}Props {
+    className?: string,
+}
+
+export interface {{ properCase name }}State {}
+
+class {{ properCase name }} extends PureComponent<{{ properCase name }}Props, {{ properCase name }}State> {
+static defaultProps: {{ properCase name }}Props  = {};
+render() {
+const {className} = this.props;
+return (
+    <CompRoot className={className} data-testid='CompRoot' />
+)
+}
+}
+
+const Styled{{ properCase name }} = styled({{ properCase name }})`
+${styles};
+`;
+
+export default Styled{{ properCase name }};
+
+export { {{ properCase name }} };

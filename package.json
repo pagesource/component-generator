@@ -1,0 +1,27 @@
+{
+  "name": "component-generator",
+  "version": "1.0.0",
+  "description": "Generate React components using JS or TS",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "component-generator": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "plop": "plop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pagesource/component-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pagesource/component-generator/issues"
+  },
+  "homepage": "https://github.com/pagesource/component-generator#readme",
+  "dependencies": {
+    "plop": "^3.0.5"
+  }
+}

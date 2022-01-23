@@ -1,0 +1,38 @@
+import React from 'react';
+import { WithContextProvider } from "smart-context";
+
+const initialState = { 
+  // state variables initialization 
+};
+
+
+const actionsConfig = {
+  // Two types of action definitions
+
+  // setSteps: ["steps"],
+  // setCounter: (counter:number) => (state:object) => ({ ...state, counter }),
+};
+
+const displayName:string = "{{name}}";
+
+/* Configuration */
+const config = {
+  initialState,
+  actionsConfig,
+  displayName,
+  debug: true,
+};
+
+interface props {
+  children: React.ReactElement
+}
+
+const {{properCase name}}ContextProvider: React.FunctionComponent<props> = ({children}: props) => {
+  return (
+    <>
+      {children}
+    </>
+  )
+}
+
+export default WithContextProvider({{properCase name}}ContextProvider, [config]);
