@@ -3,5 +3,7 @@ export default {
   HOOKS_PATH: 'src/hooks/',
   PAGES_PATH: 'src/pages/',
   ROUTES_PATH: 'src/routes/',
-  STORES_PATH: 'src/stores/'
+  STORES_PATH: 'src/stores/',
+  APPS_PATH: 'apps/',
+  PACKAGES_PATH: 'packages/'
 };

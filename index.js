@@ -8,8 +8,7 @@ Plop.prepare(
     {
       cwd: argv.cwd,
       preload: argv.preload || [],
-      //configPath: `${process.cwd()}/plopfile-${argv.js ? 'js' : 'ts'}.js`,
-      configPath: `${process.cwd()}/node_modules/component-generator/plopfile-${argv.js ? 'js' : 'ts'}.js`,
+      configPath: `${process.cwd()}/node_modules/component-generator/plopfile.js`,
       completion: argv.completion,
     },
     function (env) {
