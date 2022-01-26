@@ -77,3 +77,7 @@ Its only dependent on two packages:
 
 [Documentation coming soon](https://linktodocumentation)
 
+## Contributors
+
+1. [Khushboo Kumari](https://github.com/khus29)
+2. [Vinod Loha](https://github.com/vinodloha)
