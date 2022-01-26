@@ -4,8 +4,6 @@ import pagesGenerator from './pages/index.js';
 import storesGenerator from './stores/index.js'
 
 export default function (plop) {
-	console.log("IN TS")
-
 	plop.setGenerator('components', componentGenerator);
     plop.setGenerator('hooks', hooksGenerator);
     plop.setGenerator('pages', pagesGenerator);

@@ -1,10 +1,22 @@
 /**
+ * common 
+ */
+
+/**
  * isTypescript - Based on script args, it returns if it is Typescript or javascript generate action
  * @returns {boolean}
  */
 export function isTypescript() {
     const scriptArgs = process.argv
     return scriptArgs.indexOf('--js') < 0
+}
+
+/**
+ * getFileExptesion - returs appropriate file extension
+ * @returns {'js' | 'ts'}
+ */
+export function getFileExptesion() {
+    return isTypescript() ? 'ts' : 'js'
 }
 
 /**
