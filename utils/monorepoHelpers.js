@@ -38,7 +38,7 @@ export default {
   when: () => isMonorepo(),
   type: 'list',
   name: 'monorepoPath',
-  message: 'Select the Monorepo app for the component',
+  message: 'Select the destination Monorepo app for plop',
   choices: () => {
     return getMonorepoApps()
   },

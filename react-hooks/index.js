@@ -9,12 +9,12 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getFileExptesion, getComputedFolderPath} from '../utils/common.js'
+import {getFileExtension, getComputedFolderPath} from '../utils/common.js'
 
-const fileExtension = getFileExptesion()
+const fileExtension = getFileExtension()
 
 export default {
-  description: 'Add a react custom hook',
+  description: 'Add a React custom hook',
   prompts: [
     monorepoQues,
     {
