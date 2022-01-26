@@ -9,7 +9,7 @@ the team to maintain consistency and saves good time.
 This tool will generate typescript files by default. However, we can generate
 javascript files as well by passing --js in script command.
 
-![Demo](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "generate-plop gif")
+![Demo](https://github.com/pagesource/component-generator/tree/feature/genrator-monorepo-updates/assets/generate-plop.gif "generate-plop gif")
 
 ## Prerequisite
 
@@ -42,3 +42,7 @@ If you wish to generate javascript files then add follwing script
     "generate": "generate-plop --js"
   }
 ```
+## Documentation
+
+[Coming soon Documentation](https://linktodocumentation)
+
