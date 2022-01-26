@@ -15,7 +15,7 @@
     "url": "git+https://github.com/pagesource/component-generator.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pagesource/component-generator/issues"
   },
