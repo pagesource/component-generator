@@ -1,7 +1,7 @@
 
 # Generate Plop
 
-Generate-plop is a simple, scalable and fast component generator. It can help 
+Generate-plop is a simple cli for generating component really fast. It can help 
 you to scaffold components, templates, hooks, services and pages (Next.js) simply by running few 
 cli commands. Say goodbye to copy-paste existing components and cleaning them up before you can work on actual task.
 
@@ -76,7 +76,6 @@ Its only dependent on two packages:
 ## Documentation
 
 [Documentation coming soon](https://linktodocumentation)
-
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
