@@ -1,0 +1,16 @@
+import React from 'react';
+import { Meta, Story } from '@storybook/react';
+
+import {{ properCase name }} from './index';
+
+export default {
+  component: { {{ properCase name }} },
+  title: "{{ properCase name }}",
+} as Meta
+
+export const all_checkboxes = () => <{{ properCase name }} />;
+
+const Template: Story = (args) => <{{ properCase name }} />;
+
+export const {{ properCase name }}ViewStory = Template.bind({});
+{{ properCase name }}ViewStory.storyName = '{{ properCase name }}View';
