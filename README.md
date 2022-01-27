@@ -10,7 +10,7 @@ the teams to maintain consistency across project and saves a lot of development 
 
 Generate-plop is by default configured to generate files in [TypeScript](https://www.typescriptlang.org/) format. However, you can generate javascript files as well by passing --js flag in script command.
 
-![Demo](https://github.com/pagesource/component-generator/blob/feature/genrator-monorepo-updates/assets/generate-plop.gif)
+![Demo](https://s10.gifyu.com/images/generate-plop.gif)
 
 ## Features
 
