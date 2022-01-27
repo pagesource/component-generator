@@ -9,20 +9,20 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {isTypescript, getComputedFolderPath, getFileExptesion} from '../utils/common.js'
+import {isTypescript, getComputedFolderPath, getFileExtension} from '../utils/common.js'
 
-const fileExtension = getFileExptesion()
+const fileExtension = getFileExtension()
 
 export default {
-  description: 'Add an unconnected component (atoms, molecules, organisms, templates)',
+  description: 'Add a React component (atoms, molecules, organisms, templates)',
   prompts: [
     monorepoQues,
     {
       type: 'list',
       name: 'type',
       message: 'Select the type of component',
-      default: 'Stateless Function',
-      choices: () => ['Stateless Function', 'React.Component']
+      default: 'Functional',
+      choices: () => ['Functional', 'Class']
     },
     {
       type: 'list',
@@ -61,12 +61,12 @@ export default {
     let folderPath = `../../${getComputedFolderPath(data.monorepoPath, config.COMPONENT_PATH)}${data.folder}`;
 
     switch (data.type) {
-      case 'Stateless Function': {
-        componentTemplate = `./react-component/${fileExtension}-templates/stateless.${fileExtension}.hbs`;
+      case 'Class': {
+        componentTemplate = `./react-component/${fileExtension}-templates/class.${fileExtension}.hbs`;
         break;
       }
       default: {
-        componentTemplate = `./react-component/${fileExtension}-templates/class.${fileExtension}.hbs`;
+        componentTemplate = `./react-component/${fileExtension}-templates/stateless.${fileExtension}.hbs`;
       }
     }
 

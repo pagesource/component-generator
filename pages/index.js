@@ -9,19 +9,19 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getComputedFolderPath, getFileExptesion} from '../utils/common.js'
+import {getComputedFolderPath, getFileExtension} from '../utils/common.js'
 
-const fileExtension = getFileExptesion()
+const fileExtension = getFileExtension()
 
 export default {
-  description: 'Add a page for your application',
+  description: 'Add a Next.js page/route',
   prompts: [
     monorepoQues,
     {
       type: 'input',
       name: 'name',
       message: 'What should be the name of the page?',
-      default: 'plp',
+      default: 'cart',
       validate: (value,data) => {
         if (/.+/.test(value)) {
           return componentExists(value, config.PAGES_PATH, data.monorepoPath)
@@ -35,7 +35,7 @@ export default {
     {
       type: 'input',
       name: 'route',
-      message: 'Optional: Where to create this page, pages (default) or custom dir under pages?'
+      message: 'Optional: Where to create this page, src/pages (default) or custom dir under pages?'
     }
   ],
   actions: (data) => {

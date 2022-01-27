@@ -1,32 +1,46 @@
 
 # Generate Plop
 
-Generate-plop is a simple, scalable and fast component generator. It can help 
-you to scaffold components, templates, hooks and pages simply by running few 
-cli commands. Automating the component creation process makes really easy for 
-the team to maintain consistency and saves good time. 
+Generate-plop is a simple cli for generating new components really fast and consistently. It can help 
+you to scaffold components, templates, hooks, services and pages (Next.js) simply by running few 
+cli commands. Say goodbye to copy-paste existing components and cleaning them up before you can work on actual task.
 
-This tool will generate typescript files by default. However, we can generate
-javascript files as well by passing --js in script command.
+Automating the component generation process makes it really easy for 
+the teams to maintain consistency across project and saves a lot of development time. 
+
+Generate-plop is by default configured to generate files in [TypeScript](https://www.typescriptlang.org/) format. However, you can generate javascript files as well by passing --js flag in script command.
 
 ![Demo](https://s10.gifyu.com/images/generate-plop.gif)
 
-## Prerequisite
+## Features
 
-It works seamlessly with node versions - 
-```bash
-  node -v
-  "^12.20.0 || ^14.13.1 || >=16.0.0"
-```
+Generate-plop as of now supports React components generation
+
+1. React Components: Class and Functional in [Atomic Design](https://atomicdesign.bradfrost.com/) structure. 
+2. React Custom Hooks.
+3. React Context.
+4. React Query Services.
+5. Next.js Pages/Routes.
+6. Checks for name collisions. 
+
 ## Installation
 
-Install generate-plop with yarn or npm. You need to run follwoing command at 
-the root level of your project.
+Run following command at the root level of your project.
 
+### With Yarn
 ```bash
-  yarn add --dev generate-plop
+  yarn add --dev @xt-pagesource/generate-plop
 ```
-Then you have to add a script in your package.json to generate typescript files
+
+### With npm
+```bash
+  npm i @xt-pagesource/generate-plop --save-dev
+```
+
+## Configuration 
+
+Post installation add a script to generate TypeScript files in your package.json. 
+
 ```bash
   #package.json
   script: {
@@ -34,7 +48,9 @@ Then you have to add a script in your package.json to generate typescript files
     "generate": "generate-plop"
   }
 ```
-If you wish to generate javascript files then add follwing script
+
+To generate javascript files instead of TypeScript add following script to package.json.
+
 ```bash
   #package.json
   script: {
@@ -42,7 +58,25 @@ If you wish to generate javascript files then add follwing script
     "generate": "generate-plop --js"
   }
 ```
+
+## Prerequisite and Dependencies
+
+It works seamlessly with node versions >= ^12.20.0
+
+Its only dependent on two packages: 
+1. [Plop](https://www.npmjs.com/package/plop)
+2. [minimist](https://www.npmjs.com/package/minimist)
+
+## Upcoming Capabilities
+
+1. Angular Templates
+2. Remix Templates
+3. Raise [issues/requests](https://github.com/pagesource/component-generator/issues) for other capabilities. 
+
 ## Documentation
 
 [Documentation coming soon](https://linktodocumentation)
+## Contributors
 
+1. [Khushboo Kumari](https://github.com/khus29)
+2. [Vinod Loha](https://github.com/vinodloha)

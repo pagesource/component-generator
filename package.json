@@ -1,11 +1,11 @@
 {
-  "name": "component-generator",
-  "version": "1.0.0",
-  "description": "Generate React components using JS or TS",
+  "name": "@xt-pagesource/generate-plop",
+  "version": "0.1.0",
+  "description": "Generate new components fast and consistently.",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "component-generator": "index.js"
+    "generate": "index.js"
   },
   "scripts": {
     "plop": "plop"
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/pagesource/component-generator.git"
   },
-  "author": "",
+  "author": "vinodloha@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pagesource/component-generator/issues"

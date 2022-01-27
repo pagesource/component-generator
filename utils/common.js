@@ -12,10 +12,10 @@ export function isTypescript() {
 }
 
 /**
- * getFileExptesion - returs appropriate file extension
+ * getFileExtension - returs appropriate file extension
  * @returns {'js' | 'ts'}
  */
-export function getFileExptesion() {
+export function getFileExtension() {
     return isTypescript() ? 'ts' : 'js'
 }
 

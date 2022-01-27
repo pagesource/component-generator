@@ -9,12 +9,12 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {isTypescript, getComputedFolderPath, getFileExptesion} from '../utils/common.js'
+import {isTypescript, getComputedFolderPath, getFileExtension} from '../utils/common.js'
 
-const fileExtension = getFileExptesion()
+const fileExtension = getFileExtension()
 
 export default {
-  description: 'Add a smart-context store',
+  description: 'Add a React smart-context store',
   prompts: [
     monorepoQues,
     {
