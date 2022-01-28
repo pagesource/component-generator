@@ -27,29 +27,35 @@ export default {
       name: 'name',
       message: 'What should it be called?',
       default: 'ChangeTitle',
-      validate: (value) => {
+     
+    }
+  ],
+  actions: (data) => {
+    const typeDefExists = componentExists('common', config.TYPE_DEF_SRC, config.SERVICES)
+    // Generate serviceName.js 
+    const folderPath =  `../../${getComputedFolderPath(config.SERVICES, config.API_SRC)}`
+     validate: (value) => {
         value = `${value}Service`;
         if (/.+/.test(value)) {
             return componentExists(value, config.API_SRC, config.SERVICES)
             ? 'A service with this name already exists '
             : true;
         }
-
+      
         return 'The name is required';
       }
-    }
-  ],
-  actions: (data) => {
-    // Generate serviceName.js 
-    const folderPath =  `../../${getComputedFolderPath(config.SERVICES, config.API_SRC)}`
-    
     const actions = [
       {
         type: 'add',
         path: `${folderPath}/{{properCase name}}Service.${fileExtension}`,
         templateFile: data.isGraphql == 'yes'? `./services/${fileExtension}-templates/graphql.${fileExtension}.hbs` : `./services/${fileExtension}-templates/index.${fileExtension}.hbs`,
         abortOnFail: true
-      }
+      },
+      {
+        type: 'add',
+        path: `${folderPath}/typeDefs/common.ts`,
+        templateFile: data.isGraphql == 'yes' && !typeDefExists ? `./services/typeDefs/common.ts.hbs` : ``,
+        abortOnFail: true
      
     ];
 

@@ -1,5 +1,9 @@
+import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { request, gql } from 'graphql-request';
+import { defaultPropTypes, APIResponse } from './typeDefs/common';
+import { getGraphQlServiceUrl } from '../../utils/endpoints'
+
 
 /**
 * @function {{ properCase name }}Service This function will call the API end point using useQuery from react-query
@@ -7,22 +11,24 @@ import { request, gql } from 'graphql-request';
 * @param {Object} props An object containing props related to query an API endpoint
 * @param {String} props.endpoint API end point
 * @param {Object} props.config in case you want to configure react-query's useQuery
-* @param {Function} props.Component any component you want to return with result from API
+* @param {Function} props.renderWithResult will call function passed from Parent component
+* @param {Boolean} props.isMock if you want to get mocked data
 *
 * @return - This function will return a component with API response as props to this component
 **/
 
-const {{ properCase name }}Service = ({ endpoint, query , config, Component}) => {
-  const result = useQuery('{{ properCase name }}', async () => {
+const {{ properCase name }}Service: FC<defaultPropTypes> = ({  query , config, renderWithResult, isMock}) => {
+ const apiEndpoint = React.useMemo(() => getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+ const result: APIResponse = useQuery('{{ properCase name }}', async () => {
     const result = await request(
-      endpoint,
+      apiEndpoint,
       gql`
        ${query}
       `
     );
     return result;
   },config);
-return  <Component {...result} />
+ return renderWithResult(result);
 };
 
 
@@ -35,12 +41,14 @@ return  <Component {...result} />
 * @param {String} props.endpoint API end point
 * @param {Object} props.options anything you want to pass as headers to API end point 
 * @param {Object} props.config in case you want to configure react-query's useQuery
+* @param {Boolean} props.isMock if you want to get mocked data
 *
 * @return - This function will return API end point response with different states
 **/
 
-export const use{{ properCase name }}Service = ({  endpoint, options, config, query }) =>
-  useQuery('{{ properCase name }}', async () => {
+export const use{{ properCase name }}Service = ({ options, config, query, isMock }: defaultPropTypes) => {
+const apiEndpoint = React.useMemo(()=> getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+  return useQuery('{{ properCase name }}', async () => {
     const result = await request(
       endpoint,
       gql`
@@ -49,6 +57,7 @@ export const use{{ properCase name }}Service = ({  endpoint, options, config, qu
       );
     return result;
   }, config);
+}
 
 
 export default {{ properCase name }}Service;
