@@ -8,5 +8,5 @@ export default {
   APPS_PATH: 'apps/',
   PACKAGES_PATH: 'packages/',
   SERVICES: 'packages/services',
-  TYPE_DEF_SRC:'typeDefs'
+  TYPES_SRC:'types'
 };

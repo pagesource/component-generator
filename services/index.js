@@ -7,9 +7,8 @@
 'use strict';
 
 import componentExists from '../utils/componentExists.js'
-import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getComputedFolderPath, getFileExtension} from '../utils/common.js'
+import {getComputedFolderPath, getFileExtension, isTypescript} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -17,9 +16,10 @@ export default {
   description: 'Add a service',
   prompts: [
     {
-      type: 'input',
+      type: 'list',
       name: 'isGraphql',
       message: 'Will it be a graphql call?',
+      choices: () => ['yes', 'no'],
       default: 'no'
     },
     {
@@ -31,33 +31,25 @@ export default {
     }
   ],
   actions: (data) => {
-    const typeDefExists = componentExists('common', config.TYPE_DEF_SRC, config.SERVICES)
     // Generate serviceName.js 
     const folderPath =  `../../${getComputedFolderPath(config.SERVICES, config.API_SRC)}`
-     validate: (value) => {
-        value = `${value}Service`;
-        if (/.+/.test(value)) {
-            return componentExists(value, config.API_SRC, config.SERVICES)
-            ? 'A service with this name already exists '
-            : true;
-        }
-      
-        return 'The name is required';
-      }
+     
     const actions = [
       {
         type: 'add',
         path: `${folderPath}/{{properCase name}}Service.${fileExtension}`,
         templateFile: data.isGraphql == 'yes'? `./services/${fileExtension}-templates/graphql.${fileExtension}.hbs` : `./services/${fileExtension}-templates/index.${fileExtension}.hbs`,
         abortOnFail: true
-      },
-      {
-        type: 'add',
-        path: `${folderPath}/typeDefs/common.ts`,
-        templateFile: data.isGraphql == 'yes' && !typeDefExists ? `./services/typeDefs/common.ts.hbs` : ``,
-        abortOnFail: true
-     
+      }
     ];
+    if(isTypescript()) {
+      actions.push({
+        type: 'add',
+        path: `${folderPath}/types/common.ts`,
+        templateFile: `./services/${fileExtension}-templates/types.ts.hbs`,
+        abortOnFail: true,
+      });
+  } 
 
     return actions;
   }
