@@ -7,5 +7,6 @@ export default {
   STORES_PATH: 'src/stores/',
   APPS_PATH: 'apps/',
   PACKAGES_PATH: 'packages/',
-  SERVICES: 'packages/services'
+  SERVICES: 'packages/services',
+  TYPES_SRC:'types'
 };

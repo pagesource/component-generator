@@ -1,0 +1,10 @@
+import { UseQueryResult, UseQueryOptions } from 'react-query/types';
+
+export type APIResponse = UseQueryResult;
+export interface defaultPropTypes {
+  url?: string;
+  options: RequestInit;
+  config?: UseQueryOptions;
+  renderWithResult?: (result: APIResponse) => any;
+  isMock: boolean
+}
