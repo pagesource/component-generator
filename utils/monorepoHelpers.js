@@ -3,19 +3,17 @@
  */
 
 import fs from 'fs'
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
 import config from '../constants.js'
+import {getRootDirectoryPath} from './common.js'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const rootPath = getRootDirectoryPath()
 
 /**
  * isMonorepo - Checks if root directory has apps or packages folder, if yes, it is monorepo application
  * @returns {boolean}
  */
 function isMonorepo() {
-  const rooteDirectories = fs.readdirSync(path.join(__dirname, `../../..`));
+  const rooteDirectories = fs.readdirSync(rootPath);
   
   return rooteDirectories.indexOf('apps') >= 0 || rooteDirectories.indexOf('packages') >= 0;
 }
@@ -25,8 +23,8 @@ function isMonorepo() {
  * @returns {Array}
  */
 function getMonorepoApps() {
-  const apps = fs.readdirSync(path.join(__dirname, `../../../${config.APPS_PATH}`));
-  const packages = fs.readdirSync(path.join(__dirname, `../../../${config.PACKAGES_PATH}`));
+  const apps = fs.readdirSync(`${rootPath}/${config.APPS_PATH}`);
+  const packages = fs.readdirSync(`${rootPath}/${config.PACKAGES_PATH}`);
   
   const appsProjects = apps.map(app => `apps/${app}`)
   const packagesProjects = packages.map(app => `packages/${app}`)

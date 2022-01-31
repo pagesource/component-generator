@@ -5,11 +5,9 @@
  */
 
 import fs from 'fs'
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import {getRootDirectoryPath} from './common.js'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const rootPath = getRootDirectoryPath()
 
 /**
  * @param {string} comp - resource name provided
@@ -18,9 +16,9 @@ const __dirname = dirname(__filename);
  * @returns {boolean}
  */
 function componentExists(comp, category, appPath) {
-  const componentCotainer = appPath ? fs.readdirSync(
-    path.join(__dirname, `../../../${appPath}/${category}`)) : fs.readdirSync(
-      path.join(__dirname, `../../../${category}`));
+  const compDirPath = appPath ? `${rootPath}/${appPath}/${category}` : `${rootPath}/${category}`
+
+  const componentCotainer = fs.readdirSync(compDirPath);
   
   return componentCotainer.indexOf(comp) >= 0;
 }
