@@ -52,15 +52,17 @@ export default {
         templateFile: data.isGraphql == 'yes'? `./services/${fileExtension}-templates/graphql.${fileExtension}.hbs` : `./services/${fileExtension}-templates/index.${fileExtension}.hbs`,
         abortOnFail: true
       }
-     
+      
     ];
     if(isTypescript()) {
-      actions.push({
-        type: 'add',
-        path: `${folderPath}/types/common.ts`,
-        templateFile: `./services/${fileExtension}-templates/types.ts.hbs`,
-        abortOnFail: true,
-      });
-    return actions;
+        actions.push({
+          type: 'add',
+          path: `${folderPath}/types/common.ts`,
+          templateFile: `./services/${fileExtension}-templates/types.ts.hbs`,
+          abortOnFail: true,
+        });
+      }
+      return actions;
+    
   }
 };
