@@ -9,7 +9,7 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getFileExtension, getComputedFolderPath} from '../utils/common.js'
+import {getFileExtension, getComputedFolderPath, getRootDirectoryPath} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -36,7 +36,8 @@ export default {
   ],
   actions: (data) => {
     // Generate useHookName/index.js and useHookName/test.js
-    const folderPath = `../../${getComputedFolderPath(data.monorepoPath, config.HOOKS_PATH)}`;
+    const rootPath = getRootDirectoryPath()
+    const folderPath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.HOOKS_PATH)}`;
   
     const actions = [
       {

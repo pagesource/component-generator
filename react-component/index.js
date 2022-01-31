@@ -9,7 +9,7 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {isTypescript, getComputedFolderPath, getFileExtension} from '../utils/common.js'
+import {isTypescript, getComputedFolderPath, getFileExtension, getRootDirectoryPath} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -57,8 +57,9 @@ export default {
   ],
   actions: (data) => {
     // Generate index.ts/js and index.test.tsx/js
+    const rootPath = getRootDirectoryPath()
     let componentTemplate;
-    let folderPath = `../../${getComputedFolderPath(data.monorepoPath, config.COMPONENT_PATH)}${data.folder}`;
+    let folderPath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.COMPONENT_PATH)}${data.folder}`;
 
     switch (data.type) {
       case 'Class': {

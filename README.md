@@ -10,7 +10,7 @@ the teams to maintain consistency across project and saves a lot of development 
 
 Generate-plop is by default configured to generate files in [TypeScript](https://www.typescriptlang.org/) format. However, you can generate javascript files as well by passing --js flag in script command.
 
-![Demo](https://s10.gifyu.com/images/generate-plop.gif)
+![Demo](https://s10.gifyu.com/images/generate-plopd707158878537f9a.gif)
 
 ## Features
 
@@ -75,7 +75,7 @@ Its only dependent on two packages:
 
 ## Documentation
 
-[Documentation coming soon](https://linktodocumentation)
+[Documentation coming soon](https://github.com/pagesource/universal-react-docs/blob/master/docs/generate-plop.md)
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)

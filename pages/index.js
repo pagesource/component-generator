@@ -9,7 +9,7 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getComputedFolderPath, getFileExtension} from '../utils/common.js'
+import {getComputedFolderPath, getFileExtension,getRootDirectoryPath} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -40,10 +40,12 @@ export default {
   ],
   actions: (data) => {
     // Generate pagename/index.js and pagename/test.js
+    const rootPath = getRootDirectoryPath()
+
     const pagePath =
       data.route.trim() !== ''
-        ? `../../${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}/${data.route}`
-        : `../../${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}`;
+        ? `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}/${data.route}`
+        : `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}`;
     
     const actions = [
       {
@@ -54,7 +56,7 @@ export default {
       },
       {
         type: 'modify',
-        path: `../../${getComputedFolderPath(data.monorepoPath, config.ROUTES_PATH)}/paths.${fileExtension}`,
+        path: `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.ROUTES_PATH)}/paths.${fileExtension}`,
         transform: (fileContents, data) => {
           let routeVarName =
             data.route.trim() !== ''
