@@ -45,7 +45,7 @@ Post installation add a script to generate TypeScript files in your package.json
   #package.json
   script: {
     ...
-    "generate": "generate-plop"
+    "generate": "generate"
   }
 ```
 
@@ -55,7 +55,7 @@ To generate javascript files instead of TypeScript add following script to packa
   #package.json
   script: {
     ...
-    "generate": "generate-plop --js"
+    "generate": "generate --js"
   }
 ```
 
@@ -75,7 +75,7 @@ Its only dependent on two packages:
 
 ## Documentation
 
-[Documentation coming soon](https://github.com/pagesource/universal-react-docs/blob/master/docs/generate-plop.md)
+[Documentation](https://github.com/pagesource/universal-react-docs/blob/master/docs/generate-plop.md)
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
