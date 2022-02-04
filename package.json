@@ -8,7 +8,8 @@
     "generate": "index.js"
   },
   "scripts": {
-    "plop": "plop"
+    "plop": "plop",
+    "release":"changeset publish"
   },
   "repository": {
     "type": "git",
