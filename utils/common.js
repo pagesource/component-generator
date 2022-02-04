@@ -3,7 +3,6 @@
  */
  import { dirname } from 'path';
  import { fileURLToPath } from 'url';
- 
   
 /**
  * isTypescript - Based on script args, it returns if it is Typescript or javascript generate action
