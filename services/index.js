@@ -8,6 +8,7 @@
 
 import componentExists from '../utils/componentExists.js'
 import config from '../constants.js'
+import {isMonorepo} from '../utils/monorepoHelpers.js'
 import {getComputedFolderPath, getFileExtension, getRootDirectoryPath, isTypescript} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
@@ -27,23 +28,20 @@ export default {
       name: 'name',
       message: 'What should it be called?',
       default: 'ChangeTitle',
-      validate: (value) => {
-        value = `${value}Service`;
-        if (/.+/.test(value)) {
-            return componentExists(value, config.API_SRC, config.SERVICES)
-            ? 'A service with this name already exists '
-            : true;
-        }
-
-        return 'The name is required';
-      }
+    },
+    {
+      when: () => !isMonorepo(),
+      type: 'input',
+      name: 'servicePath',
+      message: 'Give the custom path for the service:',
+      default: 'src/services'
     }
   ],
   actions: (data) => {
     // Generate serviceName.js 
     const rootPath = getRootDirectoryPath()
 
-    const folderPath =  `${rootPath}/${getComputedFolderPath(config.SERVICES, config.API_SRC)}`
+    const folderPath =  data.servicePath ? `${rootPath}/${data.servicePath}` : `${rootPath}/${getComputedFolderPath(config.SERVICES, config.API_SRC)}`
     
     const actions = [
       {
