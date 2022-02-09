@@ -12,7 +12,7 @@ const rootPath = getRootDirectoryPath()
  * isMonorepo - Checks if root directory has apps or packages folder, if yes, it is monorepo application
  * @returns {boolean}
  */
-function isMonorepo() {
+export function isMonorepo() {
   const rooteDirectories = fs.readdirSync(rootPath);
   
   return rooteDirectories.indexOf('apps') >= 0 || rooteDirectories.indexOf('packages') >= 0;
