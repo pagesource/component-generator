@@ -9,7 +9,7 @@
   },
   "scripts": {
     "plop": "plop",
-    "release": "changeset publish"
+    "release": "changeset publish --access public"
   },
   "repository": {
     "type": "git",
