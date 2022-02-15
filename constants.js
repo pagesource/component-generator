@@ -9,3 +9,5 @@ export default {
   PACKAGES_PATH: 'packages/',
   SERVICES: 'packages/services'
 };
+
+export const metaFileRegex = /^\..*/

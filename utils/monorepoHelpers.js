@@ -5,6 +5,7 @@
 import fs from 'fs'
 import config from '../constants.js'
 import {getRootDirectoryPath} from './common.js'
+import {metaFileRegex} from '../constants.js'
 
 const rootPath = getRootDirectoryPath()
 
@@ -26,8 +27,8 @@ function getMonorepoApps() {
   const apps = fs.readdirSync(`${rootPath}/${config.APPS_PATH}`);
   const packages = fs.readdirSync(`${rootPath}/${config.PACKAGES_PATH}`);
   
-  const appsProjects = apps.map(app => `apps/${app}`)
-  const packagesProjects = packages.map(app => `packages/${app}`)
+  const appsProjects = apps.filter(file => !metaFileRegex.test(file)).map(app => `apps/${app}`)
+  const packagesProjects = packages.filter(file => !metaFileRegex.test(file)).map(app => `packages/${app}`)
 
   return appsProjects.concat(packagesProjects)
 };
