@@ -21,6 +21,10 @@
     "url": "https://github.com/pagesource/component-generator/issues"
   },
   "homepage": "https://github.com/pagesource/component-generator#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "@changesets/cli": "^2.20.0",
     "minimist": "^1.2.5",
