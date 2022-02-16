@@ -76,6 +76,35 @@ Its only dependent on two packages:
 ## Documentation
 
 [Documentation](https://github.com/pagesource/universal-react-docs/blob/master/docs/generate-plop.md)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+Generate plop has automated version bump and summary release setup. It is using 
+[Changesets](https://github.com/changesets/changesets) to automate the process.
+
+Once you are done with your code updates, you will need to add a 
+changeset. It can be done using the following simple CLI command before committing changes.
+
+### With Yarn
+```bash
+  yarn changeset
+```
+
+### With npx
+```bash
+  npx changeset
+```
+
+It will create a changeset in the directory `.changeset`. The changeset created can be
+update later if required.
+
+
+Please adhere to this project's `code of conduct`.
+
+
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
