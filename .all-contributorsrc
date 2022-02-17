@@ -2,13 +2,23 @@
   "projectName": "@xt-pagesource/generate-plop",
   "projectOwner": "khushboo",
   "repoType": "github",
-  "repoHost": "https://github.com/pagesource/component-generator.git",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "khus29",
+      "name": "Khushboo Kumari",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13497771?v=4",
+      "profile": "https://github.com/khus29",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
