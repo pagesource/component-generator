@@ -1,4 +1,7 @@
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 # Generate Plop
 
 Generate-plop is a simple cli for generating new components really fast and consistently. It can help 
@@ -76,7 +79,43 @@ Its only dependent on two packages:
 ## Documentation
 
 [Documentation](https://github.com/pagesource/universal-react-docs/blob/master/docs/generate-plop.md)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+Generate plop has automated version bump and summary release setup. It is using 
+[Changesets](https://github.com/changesets/changesets) to automate the process.
+
+Once you are done with your code updates, you will need to add a 
+changeset. It can be done using the following simple CLI command before committing changes.
+
+### With Yarn
+```bash
+  yarn changeset
+```
+
+### With npx
+```bash
+  npx changeset
+```
+
+It will create a changeset in the directory `.changeset`. The changeset created can be
+update later if required.
+
+
+Please adhere to this project's `code of conduct`.
+
+
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
 2. [Vinod Loha](https://github.com/vinodloha)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
