@@ -111,10 +111,11 @@ Please adhere to this project's `code of conduct`.
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
+2. [Vinod Loha](https://github.com/vinodloha)
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-2. [Vinod Loha](https://github.com/vinodloha)
