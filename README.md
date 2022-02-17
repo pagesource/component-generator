@@ -1,4 +1,7 @@
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 # Generate Plop
 
 Generate-plop is a simple cli for generating new components really fast and consistently. It can help 
@@ -108,10 +111,10 @@ Please adhere to this project's `code of conduct`.
 ## Contributors
 
 1. [Khushboo Kumari](https://github.com/khus29)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 2. [Vinod Loha](https://github.com/vinodloha)
-
-<a href = "https://github.com/pagesource/component-generator/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = GitHub_username/repository_name"/>
-</a>
-
-Made with [contributors-img](https://contrib.rocks).

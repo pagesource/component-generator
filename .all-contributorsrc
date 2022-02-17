@@ -1,0 +1,14 @@
+{
+  "projectName": "@xt-pagesource/generate-plop",
+  "projectOwner": "khushboo",
+  "repoType": "github",
+  "repoHost": "https://github.com/pagesource/component-generator.git",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}
