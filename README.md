@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 # Generate Plop
 
@@ -118,7 +118,8 @@ Please adhere to this project's `code of conduct`.
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/khus29"><img src="https://avatars.githubusercontent.com/u/13497771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Khushboo Kumari</b></sub></a><br /><a href="https://github.com/khushboo/@xt-pagesource/generate-plop/commits?author=khus29" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/khus29"><img src="https://avatars.githubusercontent.com/u/13497771?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Khushboo Kumari</b></sub></a><br /><a href="https://github.com/khushboo/@xt-pagesource/generate-plop/commits?author=khus29" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vinodloha"><img src="https://avatars.githubusercontent.com/u/8122967?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vinod Loha</b></sub></a><br /><a href="https://github.com/khushboo/@xt-pagesource/generate-plop/commits?author=vinodloha" title="Code">💻</a></td>
   </tr>
 </table>
 
