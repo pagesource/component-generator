@@ -1,0 +1,42 @@
+{
+  "projectName": "@xt-pagesource/generate-plop",
+  "projectOwner": "khushboo",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "khus29",
+      "name": "Khushboo Kumari",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13497771?v=4",
+      "profile": "https://github.com/khus29",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "vinodloha",
+      "name": "Vinod Loha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8122967?v=4",
+      "profile": "https://github.com/vinodloha",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rahultagra",
+      "name": "Rahul Tagra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26215752?v=4",
+      "profile": "https://github.com/rahultagra",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
