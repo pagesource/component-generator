@@ -36,7 +36,7 @@ export default {
       type: 'input',
       name: 'customFolder',
       message: 'Give the custom path for the component:',
-      default: 'src/components/atoms'
+      default: '/'
     },
     {
       type: 'input',
@@ -44,9 +44,10 @@ export default {
       message: 'What should it be called?',
       default: 'Button',
       validate: (value, data) => {
-        const compDir = data.folder === 'custom' ? data.customFolder : data.folder
+        const compDir = data.folder === 'custom' ? `${config.SRC}/${data.customFolder}` : `${config.COMPONENT_PATH}/${data.folder}`
+
         if (/.+/.test(value)) {
-          return componentExists(value, `${config.COMPONENT_PATH}/${compDir}`, data.monorepoPath)
+          return componentExists(value, compDir, data.monorepoPath)
             ? 'A component with this name already exists '
             : true;
         
@@ -72,8 +73,7 @@ export default {
     }
 
     if (data.folder === 'custom') {
-      folderPath =
-        data.customFolder.trim() === '' ? '../src' : `../src/${data.customFolder.trim()}`;
+      folderPath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.SRC)}${data.customFolder.trim()}`;
     }
 
     const actions = [
