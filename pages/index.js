@@ -9,7 +9,7 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getComputedFolderPath, getFileExtension,getRootDirectoryPath} from '../utils/common.js'
+import {getComputedFolderPath, getFileExtension,getRootDirectoryPath, isTypescript} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -46,6 +46,8 @@ export default {
       data.route.trim() !== ''
         ? `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}/${data.route}`
         : `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}`;
+      
+    const templatePath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.TEMPLATES_PATH)}`
     
     const actions = [
       {
@@ -53,6 +55,12 @@ export default {
         path: `${pagePath}/{{lowerCase name}}/index.${fileExtension}`,
         templateFile: `./pages/${fileExtension}-templates/index.${fileExtension}.hbs`,
         abortOnFail: true
+      },
+      {
+        type: 'add',
+        path: `${templatePath}/{{lowerCase name}}.${isTypescript() ? 'tsx' : 'js'}`,
+        templateFile: `./pages/${fileExtension}-templates/template.${fileExtension}.hbs`,
+        abortOnFail: false
       },
       {
         type: 'modify',

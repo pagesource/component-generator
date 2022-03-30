@@ -35,7 +35,7 @@ export default {
       when: (data) => data.folder === 'custom',
       type: 'input',
       name: 'customFolder',
-      message: 'Give the custom path for the component:',
+      message: 'Give the custom path for the component relative to src directory:',
       default: '/'
     },
     {
@@ -81,7 +81,8 @@ export default {
         type: 'add',
         path: `${folderPath}/{{properCase name}}/index.${fileExtension}`,
         templateFile: `./react-component/${fileExtension}-templates/index.${fileExtension}.hbs`,
-        abortOnFail: true
+        abortOnFail: true,
+        
       },
       {
         type: 'add',
