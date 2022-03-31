@@ -58,9 +58,15 @@ export default {
       },
       {
         type: 'add',
-        path: `${templatePath}/{{lowerCase name}}.${isTypescript() ? 'tsx' : 'js'}`,
-        templateFile: `./pages/${fileExtension}-templates/template.${fileExtension}.hbs`,
+        path: `${templatePath}/{{properCase name}}/{{lowerCase name}}.${isTypescript() ? 'tsx' : 'js'}`,
+        templateFile: `./react-component/${fileExtension}-templates/stateless.${fileExtension}.hbs`,
         abortOnFail: false
+      },
+      {
+        type: 'add',
+        path: `${templatePath}/{{properCase name}}/{{properCase name}}.style.${fileExtension}`,
+        templateFile: `./react-component/${fileExtension}-templates/style.${fileExtension}.hbs`,
+        abortOnFail: true
       },
       {
         type: 'modify',
