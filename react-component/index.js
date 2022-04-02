@@ -29,10 +29,10 @@ export default {
       name: 'folder',
       message: 'Where do you want to keep this component?',
       default: 'atoms',
-      choices: () => ['atoms', 'molecules', 'organisms', 'templates', 'custom']
+      choices: () => ['atoms', 'molecules', 'organisms', 'templates', 'custom-path']
     },
     {
-      when: (data) => data.folder === 'custom',
+      when: (data) => data.folder === 'custom-path',
       type: 'input',
       name: 'customFolder',
       message: 'Give the custom path for the component relative to src directory:',
@@ -44,7 +44,7 @@ export default {
       message: 'What should it be called?',
       default: 'Button',
       validate: (value, data) => {
-        const compDir = data.folder === 'custom' ? `${config.SRC}/${data.customFolder}` : `${config.COMPONENT_PATH}/${data.folder}`
+        const compDir = data.folder === 'custom-path' ? `${config.SRC}/${data.customFolder}` : `${config.COMPONENT_PATH}/${data.folder}`
 
         if (/.+/.test(value)) {
           return componentExists(value, compDir, data.monorepoPath)
@@ -72,7 +72,7 @@ export default {
       }
     }
 
-    if (data.folder === 'custom') {
+    if (data.folder === 'custom-path') {
       folderPath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.SRC)}${data.customFolder.trim()}`;
     }
 
