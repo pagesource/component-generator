@@ -9,7 +9,7 @@
 import componentExists from '../utils/componentExists.js'
 import monorepoQues from '../utils/monorepoHelpers.js'
 import config from '../constants.js'
-import {getComputedFolderPath, getFileExtension,getRootDirectoryPath} from '../utils/common.js'
+import {getComputedFolderPath, getFileExtension,getRootDirectoryPath, isTypescript} from '../utils/common.js'
 
 const fileExtension = getFileExtension()
 
@@ -46,12 +46,26 @@ export default {
       data.route.trim() !== ''
         ? `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}/${data.route}`
         : `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.PAGES_PATH)}`;
+      
+    const templatePath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.TEMPLATES_PATH)}`
     
     const actions = [
       {
         type: 'add',
         path: `${pagePath}/{{lowerCase name}}/index.${fileExtension}`,
         templateFile: `./pages/${fileExtension}-templates/index.${fileExtension}.hbs`,
+        abortOnFail: true
+      },
+      {
+        type: 'add',
+        path: `${templatePath}/{{properCase name}}/{{lowerCase name}}.${isTypescript() ? 'tsx' : 'js'}`,
+        templateFile: `./react-component/${fileExtension}-templates/stateless.${fileExtension}.hbs`,
+        abortOnFail: false
+      },
+      {
+        type: 'add',
+        path: `${templatePath}/{{properCase name}}/{{properCase name}}.style.${fileExtension}`,
+        templateFile: `./react-component/${fileExtension}-templates/style.${fileExtension}.hbs`,
         abortOnFail: true
       },
       {
