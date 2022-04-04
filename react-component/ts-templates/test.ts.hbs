@@ -1,10 +1,12 @@
 import React from 'react';
-import { render, screen} from '@testing-library/react'
+import { render, screen, RenderResult} from '@testing-library/react'
 
 import {{ properCase name }} from '../index';
 
 describe('<{{ properCase name }} />', () => {
-let {{ properCase name }}Component = '';
+
+let {{ properCase name }}Component: RenderResult;
+
 beforeEach(() => {
 {{ properCase name }}Component = render(<{{ properCase name }}>Test</{{ properCase name }}>);
 });

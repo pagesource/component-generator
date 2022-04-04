@@ -29,14 +29,14 @@ export default {
       name: 'folder',
       message: 'Where do you want to keep this component?',
       default: 'atoms',
-      choices: () => ['atoms', 'molecules', 'organisms', 'templates', 'custom']
+      choices: () => ['atoms', 'molecules', 'organisms', 'templates', 'custom-path']
     },
     {
-      when: (data) => data.folder === 'custom',
+      when: (data) => data.folder === 'custom-path',
       type: 'input',
       name: 'customFolder',
-      message: 'Give the custom path for the component:',
-      default: 'src/components/atoms'
+      message: 'Give the custom path for the component relative to src directory:',
+      default: '/'
     },
     {
       type: 'input',
@@ -44,9 +44,10 @@ export default {
       message: 'What should it be called?',
       default: 'Button',
       validate: (value, data) => {
-        const compDir = data.folder === 'custom' ? data.customFolder : data.folder
+        const compDir = data.folder === 'custom-path' ? `${config.SRC}/${data.customFolder}` : `${config.COMPONENT_PATH}/${data.folder}`
+
         if (/.+/.test(value)) {
-          return componentExists(value, `${config.COMPONENT_PATH}/${compDir}`, data.monorepoPath)
+          return componentExists(value, compDir, data.monorepoPath)
             ? 'A component with this name already exists '
             : true;
         
@@ -71,9 +72,8 @@ export default {
       }
     }
 
-    if (data.folder === 'custom') {
-      folderPath =
-        data.customFolder.trim() === '' ? '../src' : `../src/${data.customFolder.trim()}`;
+    if (data.folder === 'custom-path') {
+      folderPath = `${rootPath}/${getComputedFolderPath(data.monorepoPath, config.SRC)}${data.customFolder.trim()}`;
     }
 
     const actions = [
@@ -81,7 +81,8 @@ export default {
         type: 'add',
         path: `${folderPath}/{{properCase name}}/index.${fileExtension}`,
         templateFile: `./react-component/${fileExtension}-templates/index.${fileExtension}.hbs`,
-        abortOnFail: true
+        abortOnFail: true,
+        
       },
       {
         type: 'add',

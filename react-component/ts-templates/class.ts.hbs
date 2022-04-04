@@ -5,10 +5,9 @@
 
 // Node_Module imports
 import React, { PureComponent} from 'react';
-import styled from 'styled-components';
 
 // Relative imports
-import styles, { CompRoot } from './{{ properCase name}}.style';
+import { CompRoot } from './{{ properCase name}}.style';
 
 export interface {{ properCase name }}Props {
     className?: string,
@@ -26,10 +25,5 @@ return (
 }
 }
 
-const Styled{{ properCase name }} = styled({{ properCase name }})`
-${styles};
-`;
-
-export default Styled{{ properCase name }};
-
+export default {{ properCase name }};
 export { {{ properCase name }} };

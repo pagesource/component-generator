@@ -6,10 +6,9 @@
 
 // Node_Module Imports
 import React from 'react';
-import styled from 'styled-components';
 
 // Relative imports
-import styles, { CompRoot } from './{{ properCase name }}.style';
+import { CompRoot } from './{{ properCase name }}.style';
 
 export interface {{ properCase name }}Props {
     className?: string,
@@ -20,11 +19,5 @@ const {{ properCase name }}: React.FunctionComponent<{{ properCase name }}Props>
   {children}</CompRoot>;
 
 {{ properCase name }}.defaultProps = {};
-
-const Styled{{ properCase name }} = styled({{ properCase name }})`
-${styles};
-`;
-
-export default Styled{{ properCase name }};
-
+export default {{ properCase name }};
 export { {{ properCase name }} };
