@@ -1,5 +1,15 @@
 # @xt-pagesource/generate-plop
 
+## 1.2.0
+
+### Minor Changes
+
+- 5e0d080: Create a template while generating page
+
+### Patch Changes
+
+- 781d817: Custom component creation issue and component creation test & story issue fix
+
 ## 1.1.1
 
 ### Patch Changes

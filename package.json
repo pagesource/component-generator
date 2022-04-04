@@ -1,6 +1,6 @@
 {
   "name": "@xt-pagesource/generate-plop",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Generate new components fast and consistently.",
   "main": "index.js",
   "type": "module",
