@@ -26,11 +26,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@changesets/cli": "^2.20.0",
     "minimist": "^1.2.5",
     "plop": "^3.0.5"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.20.0",
     "all-contributors-cli": "^6.20.0"
   }
 }
