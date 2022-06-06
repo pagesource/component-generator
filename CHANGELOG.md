@@ -1,5 +1,11 @@
 # @xt-pagesource/generate-plop
 
+## 1.2.1
+
+### Patch Changes
+
+- a814651: Moved changesets/cli package to dev-dependencies from dependencies.
+
 ## 1.2.0
 
 ### Minor Changes
