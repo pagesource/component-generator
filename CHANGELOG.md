@@ -1,5 +1,11 @@
 # @xt-pagesource/generate-plop
 
+## 1.4.0
+
+### Minor Changes
+
+- a3635db: Version bump
+
 ## 1.3.0
 
 ### Minor Changes
