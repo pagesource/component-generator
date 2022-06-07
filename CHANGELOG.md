@@ -1,5 +1,11 @@
 # @xt-pagesource/generate-plop
 
+## 1.3.0
+
+### Minor Changes
+
+- c558e9f: Fixed the import paths for services template
+
 ## 1.2.1
 
 ### Patch Changes
