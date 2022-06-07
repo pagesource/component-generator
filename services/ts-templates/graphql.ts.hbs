@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { request, gql } from 'graphql-request';
 import { defaultPropTypes, APIResponse } from './types/common';
-import { getGraphQlServiceUrl } from '../../utils/endpoints'
+import { getGraphQlServiceUrl } from 'utils/endpoints'
 
 
 /**
@@ -18,7 +18,7 @@ import { getGraphQlServiceUrl } from '../../utils/endpoints'
 **/
 
 const {{ properCase name }}Service: FC<defaultPropTypes> = ({  query , config, renderWithResult, isMock}) => {
- const apiEndpoint = React.useMemo(() => getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+ const apiEndpoint = getGraphQlServiceUrl('{{lowerCase name}}', isMock )
  const result: APIResponse = useQuery('{{ properCase name }}', async () => {
     const result = await request(
       apiEndpoint,
@@ -47,7 +47,7 @@ const {{ properCase name }}Service: FC<defaultPropTypes> = ({  query , config, r
 **/
 
 export const use{{ properCase name }}Service = ({ options, config, query, isMock }: defaultPropTypes) => {
-const apiEndpoint = React.useMemo(()=> getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+const apiEndpoint = getGraphQlServiceUrl('{{lowerCase name}}', isMock )
   return useQuery('{{ properCase name }}', async () => {
     const result = await request(
       endpoint,

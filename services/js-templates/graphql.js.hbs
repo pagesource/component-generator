@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { request, gql } from 'graphql-request';
-import { getGraphQlServiceUrl } from '../../utils/endpoints'
+import { getGraphQlServiceUrl } from 'utils/endpoints'
 
 /**
 * @function {{ properCase name }}Service This function will call the API end point using useQuery from react-query
@@ -15,7 +15,7 @@ import { getGraphQlServiceUrl } from '../../utils/endpoints'
 **/
 
 const {{ properCase name }}Service = ({ query , config, Component}) => {
-  const apiEndpoint = React.useMemo(()=> getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+  const apiEndpoint = getGraphQlServiceUrl('{{lowerCase name}}', isMock )
   const result = useQuery('{{ properCase name }}', async () => {
     const result = await request(
       apiEndpoint,
@@ -42,7 +42,7 @@ return  <Component {...result} />
 **/
 
 export const use{{ properCase name }}Service = ({ options, config, query, isMock }) => {
-  const apiEndpoint = React.useMemo(()=> getGraphQlServiceUrl('{{lowerCase name}}', isMock ),[isMock])
+  const apiEndpoint = getGraphQlServiceUrl('{{lowerCase name}}', isMock )
   useQuery('{{ properCase name }}', async () => {
     const result = await request(
       apiEndpoint,

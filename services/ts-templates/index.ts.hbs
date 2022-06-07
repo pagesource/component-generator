@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useQuery } from 'react-query';
-import { fetchWrapper } from '../../utils/serviceUtils';
+import { fetchWrapper } from 'utils/serviceUtils';
 import { defaultPropTypes, APIResponse } from './types/common';
-import { getDataServiceUrl } from '../../utils/endpoints'
+import { getDataServiceUrl } from 'config/endpoints'
 
 /**
 * @function {{ properCase name }}Service This function will call the API end point using useQuery from react-query
@@ -18,7 +18,7 @@ import { getDataServiceUrl } from '../../utils/endpoints'
 **/
 
 const {{ properCase name }}Service: FC<defaultPropTypes> = ({  options, config, renderWithResult, isMock }) => {
- const apiEndpoint = React.useMemo(() => getDataServiceUrl('{{lowerCase name}}', isMock ), [isMock])
+ const apiEndpoint = getDataServiceUrl('{{lowerCase name}}', isMock)
  const result: APIResponse = useQuery({
    queryKey: ['{{ properCase name }}'],
    queryFn: () => fetchWrapper(apiEndpoint, options),
@@ -43,7 +43,7 @@ const {{ properCase name }}Service: FC<defaultPropTypes> = ({  options, config, 
 **/
 
 export const use{{ properCase name }}Service = ({ options, config, isMock }: defaultPropTypes) => {
-  const apiEndpoint = React.useMemo(() => getDataServiceUrl('{{lowerCase name}}', isMock ), [isMock])
+  const apiEndpoint = getDataServiceUrl('{{lowerCase name}}', isMock )
   return useQuery({
      queryKey: ['{{ properCase name }}'],
      queryFn: () => fetchWrapper(apiEndpoint, options),
