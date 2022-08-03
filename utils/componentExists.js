@@ -19,7 +19,7 @@
  function componentExists(comp, category, appPath) {
    //const compDirPath = appPath ? `${rootPath}/${appPath}/${category}` : `${rootPath}/${category}`
    // TG: Fixed Issue 37: Does not work on Windows
-   const compDirPath = appPath ? path.join(rootPath,appPath,category) : path.join(rootPath, category);
+   const compDirPath = appPath ? path.join(rootPath, appPath, category) : path.join(rootPath, category);
   
    //Check if the directory exists, if not create it and return false
    if (!fs.existsSync(compDirPath)) {
