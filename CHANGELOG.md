@@ -1,5 +1,11 @@
 # @xt-pagesource/generate-plop
 
+## 1.4.1
+
+### Patch Changes
+
+- dcd3bcc: Fix relative path issue in windows
+
 ## 1.4.0
 
 ### Minor Changes
